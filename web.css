@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover; /* agar memenuhi layar */
+  background-repeat: no-repeat; /* tidak diulang */
+  background-position: top; /* posisi di tengah */
+}
+.navbar {
+  display: flex;
+  justify-content: space-between; /* menu di kanan */
+  align-items: center;
+  background-color: rgb(219, 107, 52);
+  padding: 1rem 2rem;
+  color: white;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a {
+  color: white;
+}
+
+.nav-links a:hover {
+  color: #ff9900;
+}
+
+header {
+  text-align: center;
+  margin: 2rem 0;
+  background-color: aliceblue;
+  padding: 1rem;
+  margin-bottom: 10px;
+}
+
+.box {
+  width: 400px;
+  height: auto;
+
+  border: px solid black;
+  margin: auto;
+  margin-top: auto;
+  box-shadow: 10px 10px 5px rgb(143, 60, 22);
+  border-radius: 50px;
+  transition: all 2s ease;
+}
+.box:hover {
+  background-color: rgb(193, 127, 34);
+  transform: scale(1.5);
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    
+    "content"
+    "ads"
+    "footer";
+  grid-template-rows: auto auto 1fr auto auto;
+  padding: 10px;
+  gap: 10px;
+}
+.content {
+  grid-area: content;
+  background-color: white;
+  border: solid black 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+}
+
+.ads {
+  grid-area: ads;
+  background-color: lightgray;
+  border: solid black 2px;
+}
+
+footer {
+  grid-area: footer;
+  background-color: lightgray;
+  border: solid black 2px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-areas:
+      "content ads"
+      "footer footer";
+      
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto auto;
+  }
+  header {
+    background-color: blue;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template-areas:
+      "content content ads"
+      "footer footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto auto;
+  }
+  header {
+    background-color: rgb(243, 46, 177);
+  }
+}
